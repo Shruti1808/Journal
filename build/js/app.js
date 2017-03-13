@@ -9,7 +9,9 @@ $(document).ready(function(){
     var entry = new Entry (title, body);
     var resultCount = entry.wordCount();
     var resultConsonantVowel = entry.getVowelsAndConsonants();
+    var teaser = entry.getTeaser();
     $('#results').text("Word count: " + resultCount + " " + resultConsonantVowel);
+    $('#teaser').text("Beginning of post: " + teaser);
   });
 });
 
@@ -63,10 +65,10 @@ Entry.prototype.getTeaser = function() {
   var words = firstSentence.split(' ');
 
   if(words.length > 8) {
-    firstSentence = words.substr(0, 8);
+    firstSentence = words.slice(0, 9);
   }
 
-  return words;
+  return firstSentence.join(' ');
 };
 
 exports.entryModule = Entry;

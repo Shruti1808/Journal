@@ -8,6 +8,8 @@ $(document).ready(function(){
     var entry = new Entry (title, body);
     var resultCount = entry.wordCount();
     var resultConsonantVowel = entry.getVowelsAndConsonants();
+    var teaser = entry.getTeaser();
     $('#results').text("Word count: " + resultCount + " " + resultConsonantVowel);
+    $('#teaser').text("Beginning of post: " + teaser);
   });
 });

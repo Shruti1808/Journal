@@ -47,10 +47,10 @@ Entry.prototype.getTeaser = function() {
   var words = firstSentence.split(' ');
 
   if(words.length > 8) {
-    firstSentence = words.substr(0, 8);
+    firstSentence = words.slice(0, 9);
   }
 
-  return words;
+  return firstSentence.join(' ');
 };
 
 exports.entryModule = Entry;
